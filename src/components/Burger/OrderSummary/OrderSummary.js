@@ -16,10 +16,14 @@ const orderSummary = props => {
       <h3>Your Order:</h3>
       <p>A delicious burger with the following:</p>
       <ul>{ingSummary}</ul>
-      <p>Total: ${props.price}</p>
+      <p>
+        <strong>Total: ${props.price.toFixed(2)}</strong>
+      </p>
       <p>Continue to checkout?</p>
-      <Button btnType="Success">Continue</Button>
-      <Button clicked={props.modalClosed} btnType="Danger">
+      <Button clicked={props.continuePurchase} btnType="Success">
+        Continue
+      </Button>
+      <Button clicked={props.cancelPurchase} btnType="Danger">
         Cancel
       </Button>
     </>
