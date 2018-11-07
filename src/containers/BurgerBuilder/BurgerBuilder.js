@@ -4,20 +4,30 @@ import BuildControls from "../../components/Burger/BuildControls/BuildControls";
 import Modal from "../../components/UI/Modal/Modal";
 import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
 
-const INGREDIENT_PRICES = {
-  bacon: 1.0,
-  lettuce: 0.25,
-  cheese: 0.5,
-  meat: 1.5
-};
+// const INGREDIENT_PRICES = {
+//   bacon: 1.0,
+//   tomato: 0.25,
+//   lettuce: 0.25,
+//   cheese: 0.5,
+//   meat: 1.5
+// };
 
 class BurgerBuilder extends Component {
   state = {
     ingredients: {
       bacon: 0,
+      tomato: 0,
       lettuce: 0,
       cheese: 0,
       meat: 0
+    },
+    prices: {
+      bacon: 1.0,
+      tomato: 0.25,
+      lettuce: 0.25,
+      cheese: 0.5,
+      meat: 1.5,
+      burger: 6.5
     },
     totalPrice: 6.5,
     purchasable: false,
@@ -40,7 +50,7 @@ class BurgerBuilder extends Component {
       ...this.state.ingredients
     };
     updIngredients[type] = this.state.ingredients[type] + 1;
-    const newPrice = this.state.totalPrice + INGREDIENT_PRICES[type];
+    const newPrice = this.state.totalPrice + this.state.prices[type];
     this.setState({ totalPrice: newPrice, ingredients: updIngredients });
     this.updatePurchaseState(updIngredients);
   };
@@ -53,7 +63,7 @@ class BurgerBuilder extends Component {
       return;
     }
     updIngredients[type] = this.state.ingredients[type] - 1;
-    const newPrice = this.state.totalPrice - INGREDIENT_PRICES[type];
+    const newPrice = this.state.totalPrice - this.state.prices[type];
     this.setState({ totalPrice: newPrice, ingredients: updIngredients });
     this.updatePurchaseState(updIngredients);
   };
@@ -86,8 +96,10 @@ class BurgerBuilder extends Component {
           modalClosed={this.purchaseCancelHandler}
         >
           <OrderSummary
+            ingredientPrices={this.state.prices}
             ingredients={this.state.ingredients}
             price={this.state.totalPrice}
+            subtotal={this.state.prices.burger}
             cancelPurchase={this.purchaseCancelHandler}
             continuePurchase={this.purchaseContinueHandler}
           />
