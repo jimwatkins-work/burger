@@ -14,6 +14,7 @@
   border-radius: 95% 95% 5px 5px;
   box-shadow: inset -15px 0 #c15711;
   margin: 0.5% auto;
+  margin-top: 3.5%;
   position: relative;
 }
 
@@ -23,7 +24,7 @@
   position: absolute;
   background-color: #f0cb93;
   left: 40%;
-  top: 60%;
+  top: 45%;
   border-radius: 40%;
   transform: rotate(-20deg);
   box-shadow: inset -2px -3px #e27b36;
@@ -61,7 +62,7 @@
   position: absolute;
   background-color: #f0cb93;
   left: 68%;
-  top: 50%;
+  top: 40%;
   border-radius: 40%;
   transform: rotate(30deg);
   box-shadow: inset -3px 0 #e27b36;
@@ -99,7 +100,7 @@
   position: absolute;
   background-color: #f0cb93;
   left: 30%;
-  top: 40%;
+  top: 45%;
   border-radius: 40%;
   transform: rotate(-25deg);
   box-shadow: inset -2px -3px #e27b36;

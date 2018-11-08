@@ -4,14 +4,6 @@ import BuildControls from "../../components/Burger/BuildControls/BuildControls";
 import Modal from "../../components/UI/Modal/Modal";
 import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
 
-// const INGREDIENT_PRICES = {
-//   bacon: 1.0,
-//   tomato: 0.25,
-//   lettuce: 0.25,
-//   cheese: 0.5,
-//   meat: 1.5
-// };
-
 class BurgerBuilder extends Component {
   state = {
     ingredients: {

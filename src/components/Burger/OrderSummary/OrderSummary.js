@@ -13,7 +13,6 @@ const orderSummary = props => {
   });
 
   const toppingsPrice = props.price - props.subtotal;
-
   return (
     <>
       <h3>Your Order:</h3>
