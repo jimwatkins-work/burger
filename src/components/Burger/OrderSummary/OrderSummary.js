@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../../UI/Button/Button";
+import classes from "./OrderSummary.module.css";
 
 const orderSummary = props => {
   const ingSummary = Object.keys(props.ingredients).map(ingKey => {
@@ -24,12 +25,14 @@ const orderSummary = props => {
         <strong>Total: ${props.price.toFixed(2)}</strong>
       </p>
       <p>Continue to checkout?</p>
-      <Button clicked={props.continuePurchase} btnType="Success">
-        Continue
-      </Button>
-      <Button clicked={props.cancelPurchase} btnType="Danger">
-        Cancel
-      </Button>
+      <div className={classes.Buttons}>
+        <Button clicked={props.continuePurchase} btnType="Success">
+          Continue
+        </Button>
+        <Button clicked={props.cancelPurchase} btnType="Danger">
+          Cancel
+        </Button>
+      </div>
     </>
   );
 };
