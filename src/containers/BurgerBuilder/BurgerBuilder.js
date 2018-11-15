@@ -31,7 +31,6 @@ class BurgerBuilder extends Component {
     axios
       .get("https://burger-96b0e.firebaseio.com/prices.json")
       .then(response => {
-        console.log(response.data.burger);
         this.setState({
           prices: response.data,
           totalPrice: response.data.burger
