@@ -10,15 +10,8 @@ import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 class BurgerBuilder extends Component {
   state = {
     ingredients: null,
-    prices: {
-      bacon: 1.0,
-      tomato: 0.25,
-      lettuce: 0.25,
-      cheese: 0.5,
-      meat: 1.5,
-      burger: 6.5
-    },
-    totalPrice: 6.5,
+    prices: null,
+    totalPrice: null,
     purchasable: false,
     purchasing: false,
     loading: false,
@@ -30,6 +23,19 @@ class BurgerBuilder extends Component {
       .get("https://burger-96b0e.firebaseio.com/ingredients.json")
       .then(response => {
         this.setState({ ingredients: response.data });
+      })
+      .catch(error => {
+        this.setState({ error: true });
+      });
+
+    axios
+      .get("https://burger-96b0e.firebaseio.com/prices.json")
+      .then(response => {
+        console.log(response.data.burger);
+        this.setState({
+          prices: response.data,
+          totalPrice: response.data.burger
+        });
       })
       .catch(error => {
         this.setState({ error: true });
@@ -124,7 +130,7 @@ class BurgerBuilder extends Component {
       <Spinner />
     );
 
-    if (this.state.ingredients) {
+    if (this.state.ingredients && this.state.prices) {
       burger = (
         <>
           <Burger ingredients={this.state.ingredients} />
