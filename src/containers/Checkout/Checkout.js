@@ -10,10 +10,25 @@ class Checkout extends Component {
       meat: 1
     }
   };
+
+  checkoutCancelledHandler = () => {
+    console.log("hello world");
+    this.props.history.goBack();
+  };
+
+  checkoutContinuedHandler = () => {
+    this.props.history.replace("/checkout/contact-info");
+  };
+
   render() {
     return (
       <div>
-        <CheckoutSummary ingredients={this.state.ingredients} />;
+        <CheckoutSummary
+          ingredients={this.state.ingredients}
+          checkoutCancelled={this.checkoutCancelledHandler}
+          checkoutContinued={this.checkoutContinuedHandler}
+        />
+        ;
       </div>
     );
   }
