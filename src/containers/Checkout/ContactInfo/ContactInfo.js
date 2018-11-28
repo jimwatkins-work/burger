@@ -7,13 +7,66 @@ import Input from "../../../components/UI/Input/Input";
 
 class ContactInfo extends Component {
   state = {
-    userName: "",
-    email: "",
-    address: {
-      street: "",
-      city: "",
-      state: "",
-      zipCode: ""
+    orderForm: {
+      name: {
+        elementType: "input",
+        elementConfig: {
+          type: "text",
+          placeholder: "Name"
+        },
+        value: ""
+      },
+      street: {
+        elementType: "input",
+        elementConfig: {
+          type: "text",
+          placeholder: "Street"
+        },
+        value: ""
+      },
+      city: {
+        elementType: "input",
+        elementConfig: {
+          type: "text",
+          placeholder: "City"
+        },
+        value: ""
+      },
+      state: {
+        elementType: "input",
+        elementConfig: {
+          type: "text",
+          placeholder: "State"
+        },
+        value: ""
+      },
+      zip: {
+        elementType: "input",
+        elementConfig: {
+          type: "text",
+          placeholder: "Zip Code"
+        },
+        value: ""
+      },
+      email: {
+        elementType: "input",
+        elementConfig: {
+          type: "email",
+          placeholder: "Email"
+        },
+        value: ""
+      },
+      deliveryMethod: {
+        elementType: "select",
+        elementConfig: {
+          options: [
+            { value: "fastest", displayValue: "Fastest" },
+            { value: "economy", displayValue: "Economy" },
+            { value: "standard", displayValue: "Standard" }
+          ]
+        },
+        value: ""
+      }
     },
     loading: false
   };
@@ -24,18 +77,7 @@ class ContactInfo extends Component {
     const order = {
       date: Date(),
       ingredients: this.props.ingredients,
-      price: this.props.price,
-      customer: {
-        name: "Jim Watkins",
-        address: {
-          street: "15154 Bunker Hill Ct",
-          city: "Happy Valley",
-          state: "OR",
-          zip: "97086"
-        },
-        email: "james.watkins77@yahoo.com"
-      },
-      deliveryMethod: "fastest"
+      price: this.props.price
     };
     axios
       .post("/orders.json", order)
@@ -49,29 +91,25 @@ class ContactInfo extends Component {
   };
 
   render() {
+    const formsElementsArray = [];
+    for (let key in this.state.orderForm) {
+      formsElementsArray.push({
+        id: key,
+        config: this.state.orderForm[key]
+      });
+    }
     let form = (
       <form>
-        <Input inputtype="input" type="text" name="name" placeholder="Name" />
-        <Input
-          inputtype="input"
-          type="email"
-          name="email"
-          placeholder="Email"
-        />
-        <Input
-          inputtype="input"
-          type="text"
-          name="street"
-          placeholder="Street"
-        />
-        <Input inputtype="input" type="text" name="city" placeholder="City" />
-        <Input inputtype="input" type="text" name="state" placeholder="State" />
-        <Input
-          inputtype="input"
-          type="text"
-          name="zipCopde"
-          placeholder="Zip Code"
-        />
+        {formsElementsArray.map(el => {
+          return (
+            <Input
+              key={el.id}
+              elementType={el.config.elementType}
+              elementConfig={el.config.elementConfig}
+              value={el.config.value}
+            />
+          );
+        })}
         <Button btnType="Success" clicked={this.orderHandler}>
           ORDER
         </Button>
