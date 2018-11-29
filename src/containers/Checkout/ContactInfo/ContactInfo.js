@@ -90,6 +90,19 @@ class ContactInfo extends Component {
       });
   };
 
+  inputChangedHanlder = (event, inputIdentifier) => {
+    console.log(event.target.value);
+    const updatedOrderForm = {
+      ...this.state.orderForm
+    };
+    const updatedFormElement = {
+      ...updatedOrderForm[inputIdentifier]
+    };
+    updatedFormElement.value = event.target.value;
+    updatedOrderForm[inputIdentifier] = updatedFormElement;
+    this.setState({ orderForm: updatedOrderForm });
+  };
+
   render() {
     const formsElementsArray = [];
     for (let key in this.state.orderForm) {
@@ -107,6 +120,7 @@ class ContactInfo extends Component {
               elementType={el.config.elementType}
               elementConfig={el.config.elementConfig}
               value={el.config.value}
+              changed={event => this.inputChangedHanlder(event, el.id)}
             />
           );
         })}
