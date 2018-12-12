@@ -153,7 +153,7 @@ class ContactInfo extends Component {
             { value: "standard", displayValue: "Standard" }
           ]
         },
-        value: "",
+        value: "economy",
         validation: {
           required: true
         },
