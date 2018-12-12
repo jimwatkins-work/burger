@@ -109,6 +109,9 @@ class ContactInfo extends Component {
           ]
         },
         value: "",
+        validation: {
+          required: true
+        },
         valid: false,
         touched: false
       },
@@ -151,10 +154,14 @@ class ContactInfo extends Component {
           ]
         },
         value: "",
+        validation: {
+          required: true
+        },
         valid: false,
         touched: false
       }
     },
+    formIsValid: false,
     loading: false
   };
 
@@ -200,7 +207,12 @@ class ContactInfo extends Component {
     }
     updatedFormElement.touched = true;
     updatedOrderForm[inputIdentifier] = updatedFormElement;
-    this.setState({ orderForm: updatedOrderForm });
+    let formIsValid = true;
+    for (let inputIdentifier in updatedOrderForm) {
+      formIsValid =
+        updatedOrderForm[inputIdentifier].valid && formIsValid === true;
+    }
+    this.setState({ orderForm: updatedOrderForm, formIsValid: formIsValid });
   };
 
   checkValidity = (value, rules) => {
@@ -245,7 +257,9 @@ class ContactInfo extends Component {
             />
           );
         })}
-        <Button btnType="Success">ORDER</Button>
+        <Button btnType="Success" disabled={!this.state.formIsValid}>
+          ORDER
+        </Button>
       </form>
     );
     if (this.state.loading) {
