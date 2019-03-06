@@ -17,7 +17,7 @@ const Order = props => {
     } else {
       return (
         <span
-          key={ing.name}
+          key={ing.name + Math.random()}
           style={{
             textTransform: "Capitalize",
             display: "inline-block",
