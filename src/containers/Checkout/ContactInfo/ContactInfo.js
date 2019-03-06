@@ -183,7 +183,6 @@ class ContactInfo extends Component {
       price: this.props.price,
       orderData: formData
     };
-
     this.props.onOrderBurger(order);
   };
 
@@ -273,7 +272,7 @@ class ContactInfo extends Component {
 const mapStateToProps = state => {
   return {
     ings: state.burgerBuilder.ingredients,
-    price: state.burgerBuilder.totalPrice,
+    price: state.burgerBuilder.prices.total,
     loading: state.order.loading
   };
 };

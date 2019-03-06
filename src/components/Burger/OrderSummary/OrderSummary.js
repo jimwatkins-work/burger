@@ -16,21 +16,22 @@ const orderSummary = props => {
   const toppingsPrice = props.price - props.subtotal;
   return (
     <>
-      <h3>Your Order:</h3>
-      <p>A delicious burger with the following:</p>
+      <h1 className={classes.OrderConfirmation}>YOUR ORDER:</h1>
+      <p>A DELICIOUS BURGER WITH THE FOLLOWING:</p>
       <ul>{ingSummary}</ul>
-      <p>Subtotal: ${props.subtotal.toFixed(2)}</p>
-      <p>Toppings: ${toppingsPrice.toFixed(2)}</p>
-      <p>
-        <strong>Total: ${props.price.toFixed(2)}</strong>
+      <p className={classes.Subtotal}>Subtotal: ${props.subtotal.toFixed(2)}</p>
+      <p className={classes.Subtotal}>Toppings: ${toppingsPrice.toFixed(2)}</p>
+      <p className={classes.Total}>
+        <strong>TOTAL: ${props.price.toFixed(2)}</strong>
       </p>
-      <p>Continue to checkout?</p>
+      <br />
+      <p className={classes.Checkout}>CONTINUE TO CHECKOUT?</p>
       <div className={classes.Buttons}>
         <Button clicked={props.continuePurchase} btnType="Success">
-          Continue
+          CONTINUE
         </Button>
         <Button clicked={props.cancelPurchase} btnType="Danger">
-          Cancel
+          CANCEL
         </Button>
       </div>
     </>

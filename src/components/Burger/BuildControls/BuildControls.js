@@ -3,18 +3,18 @@ import classes from "./BuildControls.module.css";
 import BuildControl from "./BuildControl/BuildControl";
 
 const Controls = [
-  { label: "Bacon", type: "bacon" },
-  { label: "Tomato", type: "tomato" },
-  { label: "Lettuce", type: "lettuce" },
-  { label: "Cheese", type: "cheese" },
-  { label: "Meat", type: "meat" }
+  { label: "BACON", type: "bacon" },
+  { label: "TOMATO", type: "tomato" },
+  { label: "LETTUCE", type: "lettuce" },
+  { label: "CHEESE", type: "cheese" },
+  { label: "MEAT", type: "meat" }
 ];
 
 const BuildControls = props => {
   return (
     <div className={classes.BuildControls}>
-      <p>
-        <strong>Current Price: ${props.price.toFixed(2)}</strong>
+      <p className={classes.CurrentPrice}>
+        <strong>CURRENT PRICE: ${props.price.toFixed(2)}</strong>
       </p>
       {Controls.map(ctrl => {
         return (
@@ -32,7 +32,7 @@ const BuildControls = props => {
         disabled={!props.purchasable}
         onClick={props.purchasing}
       >
-        Order Now
+        ORDER NOW
       </button>
     </div>
   );

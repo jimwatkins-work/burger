@@ -32,16 +32,20 @@
 .Label {
   padding: 10px;
   font-weight: bold;
+  font-size: 26px;
+  color: white;
   width: 80px;
+  text-align: center;
+  text-shadow: 1.5px 1.5px black;
 }
 
 .BuildControl .Less {
-  background-color: #d39952;
-  color: white;
+  background-color: white;
+  color: #400000;
 }
 
 .BuildControl .More {
-  background-color: #8f5e1e;
+  background-color: #400000;
   color: white;
 }
 
