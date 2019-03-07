@@ -4,6 +4,7 @@ export {
   initIngredients,
   initPrices
 } from "./burgerBuilder";
+
 export {
   purchaseBurgerSuccess,
   purchaseBurgerFailure,
@@ -14,3 +15,5 @@ export {
   fetchOrdersFail,
   fetchOrders
 } from "./order";
+
+export { authStart, authFailure, authSuccess, authCheck } from "./auth";
