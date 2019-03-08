@@ -15,7 +15,7 @@ class ContactInfo extends Component {
         elementType: "input",
         elementConfig: {
           type: "text",
-          placeholder: "Name"
+          placeholder: "NAME"
         },
         value: "",
         validation: {
@@ -30,7 +30,7 @@ class ContactInfo extends Component {
         elementType: "input",
         elementConfig: {
           type: "text",
-          placeholder: "Street"
+          placeholder: "STREET"
         },
         value: "",
         validation: {
@@ -45,7 +45,7 @@ class ContactInfo extends Component {
         elementType: "input",
         elementConfig: {
           type: "text",
-          placeholder: "City"
+          placeholder: "CITY"
         },
         value: "",
         validation: {
@@ -122,7 +122,7 @@ class ContactInfo extends Component {
         elementType: "input",
         elementConfig: {
           type: "number",
-          placeholder: "Zip Code"
+          placeholder: "ZIP CODE"
         },
         value: "",
         validation: {
@@ -137,7 +137,7 @@ class ContactInfo extends Component {
         elementType: "input",
         elementConfig: {
           type: "email",
-          placeholder: "Email"
+          placeholder: "EMAIL"
         },
         value: "",
         validation: {
@@ -151,9 +151,9 @@ class ContactInfo extends Component {
         elementType: "select",
         elementConfig: {
           options: [
-            { value: "fastest", displayValue: "Fastest" },
-            { value: "economy", displayValue: "Economy" },
-            { value: "standard", displayValue: "Standard" }
+            { value: "fastest", displayValue: "FASTEST" },
+            { value: "economy", displayValue: "ECONOMY" },
+            { value: "standard", displayValue: "STANDARD" }
           ]
         },
         value: "economy",
@@ -272,7 +272,7 @@ class ContactInfo extends Component {
     }
     return (
       <div className={classes.ContactInfo}>
-        <h4>Enter Your Contact Info:</h4>
+        <h4>ENTER YOUR CONTACT INFO:</h4>
         {form}
       </div>
     );

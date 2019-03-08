@@ -32,7 +32,9 @@ InputElement:focus {
 }
 
 .ValidationError {
-  color: red;
-  font-weight: bold;
+  padding-top: 15px;
+  color: black;
+  text-shadow: 0.5px 0.5px red;
+  textfont-weight: bold;
   margin: 5px 0;
 }

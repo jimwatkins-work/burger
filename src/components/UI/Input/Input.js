@@ -10,7 +10,7 @@ const Input = props => {
     inputClasses.push(classes.Invalid);
     validationError = (
       <p className={classes.ValidationError}>
-        Please enter a valid {props.elementConfig.placeholder}
+        PLEASE ENTER A VALID {props.elementConfig.placeholder}
       </p>
     );
   }

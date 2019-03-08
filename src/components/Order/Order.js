@@ -34,9 +34,10 @@ const Order = props => {
 
   return (
     <div className={classes.Order}>
-      <p>Ingredients: {ingredientsOutput}</p>
+      <p>DATE ORDERED: {props.date}</p>
+      <p>INGREDIENTS: {ingredientsOutput}</p>
       <p>
-        Total Price: <strong>${props.totalPrice.toFixed(2)}</strong>
+        TOTAL PRICE: <strong>${props.totalPrice.toFixed(2)}</strong>
       </p>
     </div>
   );
