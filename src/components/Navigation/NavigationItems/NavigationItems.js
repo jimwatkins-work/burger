@@ -1,22 +1,22 @@
 import React from "react";
-import NavigationItem from "../NavigationItems/NavigationItem/NavigationItem";
-import classes from "./NavigationItems.module.css";
 
-const navigationItems = props => {
-  console.log(props.isAuthenticated);
-  return (
-    <ul className={classes.NavigationItems}>
-      <NavigationItem link="/" exact>
-        BURGER BUILDER
-      </NavigationItem>
+import classes from "./NavigationItems.module.css";
+import NavigationItem from "./NavigationItem/NavigationItem";
+
+const navigationItems = props => (
+  <ul className={classes.NavigationItems}>
+    <NavigationItem link="/" exact>
+      BURGER BUILDER
+    </NavigationItem>
+    {props.isAuthenticated ? (
       <NavigationItem link="/orders">ORDERS</NavigationItem>
-      {!props.isAuthenticated ? (
-        <NavigationItem link="/signin">SIGN IN</NavigationItem>
-      ) : (
-        <NavigationItem link="/signout">SIGN OUT</NavigationItem>
-      )}
-    </ul>
-  );
-};
+    ) : null}
+    {!props.isAuthenticated ? (
+      <NavigationItem link="/auth">SIGN IN</NavigationItem>
+    ) : (
+      <NavigationItem link="/logout">SIGN OUT</NavigationItem>
+    )}
+  </ul>
+);
 
 export default navigationItems;
