@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 import Button from "../../components/UI/Button/Button";
 import Input from "../../components/UI/Input/Input";
 import Spinner from "../../components/UI/Spinner/Spinner";
@@ -38,7 +39,7 @@ class Auth extends Component {
         touched: false
       }
     },
-    isSignUp: true
+    isSignUp: false
   };
 
   checkValidity = (value, rules) => {
@@ -132,19 +133,25 @@ class Auth extends Component {
       errorMessage = <p>AUTH ERROR: {this.props.error.message}</p>;
     }
 
+    let authRedirect = null;
+
+    if (this.props.isAuthenticated) {
+      authRedirect = <Redirect to="/" />;
+    }
+
     return (
       <div className={classes.Auth}>
+        {authRedirect}
         {errorMessage}
         <form onSubmit={this.onSubmitHandler}>
           {form}
           <Button btnType="Failure">
             {this.state.isSignUp ? "SIGN UP" : "SIGN IN"}
           </Button>
-          <br />
-          <Button clicked={this.switchAuthModeHandler} btnType="Failure">
-            SWITCH TO SIGN {this.state.isSignUp ? "IN" : "UP"}
-          </Button>
         </form>
+        <Button clicked={this.switchAuthModeHandler} btnType="Failure">
+          SWITCH TO SIGN {this.state.isSignUp ? "IN" : "UP"}
+        </Button>
       </div>
     );
   }
@@ -153,7 +160,8 @@ class Auth extends Component {
 const mapStateToProps = state => {
   return {
     loading: state.auth.loading,
-    error: state.auth.error
+    error: state.auth.error,
+    isAuthenticated: state.auth.token !== null
   };
 };
 
