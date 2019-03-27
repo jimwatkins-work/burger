@@ -9,6 +9,7 @@ import Spinner from "../../components/UI/Spinner/Spinner";
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import * as burgerBuilderActions from "../../store/actions/burgerBuilder";
 import * as orderActions from "../../store/actions/order";
+import * as authActions from "../../store/actions/auth";
 
 class BurgerBuilder extends Component {
   state = {
@@ -35,7 +36,8 @@ class BurgerBuilder extends Component {
     if (this.props.isAuthenticated) {
       this.setState({ purchasing: true });
     } else {
-      this.props.history.push("signin");
+      this.props.onSetAuthRedirectPath("/checkout");
+      this.props.history.push("/signin");
     }
   };
 
@@ -123,7 +125,9 @@ const mapDispatchToProps = dispatch => {
       dispatch(burgerBuilderActions.removeIngredient(ingName)),
     onInitIngredients: () => dispatch(burgerBuilderActions.initIngredients()),
     onInitPrices: () => dispatch(burgerBuilderActions.initPrices()),
-    onInitPurchase: () => dispatch(orderActions.purchaseInit())
+    onInitPurchase: () => dispatch(orderActions.purchaseInit()),
+    onSetAuthRedirectPath: path =>
+      dispatch(authActions.setAuthRedirectPath(path))
   };
 };
 
