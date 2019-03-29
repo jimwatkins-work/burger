@@ -245,7 +245,7 @@ class ContactInfo extends Component {
     }
     return (
       <div className={classes.ContactInfo}>
-        <h4>ENTER YOUR CONTACT INFO:</h4>
+        <h4>ENTER YOUR DELIVERY INFO:</h4>
         {form}
       </div>
     );

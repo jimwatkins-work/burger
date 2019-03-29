@@ -17,6 +17,7 @@ const BuildControl = props => {
         {" "}
         MORE{" "}
       </button>
+      <div className={classes.Label}>+ ${Number(props.price).toFixed(2)}</div>
     </div>
   );
 };

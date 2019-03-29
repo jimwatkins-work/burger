@@ -3,11 +3,11 @@ import classes from "./BuildControls.module.css";
 import BuildControl from "./BuildControl/BuildControl";
 
 const Controls = [
-  { label: "BACON", type: "bacon" },
-  { label: "TOMATO", type: "tomato" },
-  { label: "LETTUCE", type: "lettuce" },
-  { label: "CHEESE", type: "cheese" },
-  { label: "MEAT", type: "meat" }
+  { label: "BACON", type: "bacon", price: 1.0 },
+  { label: "TOMATO", type: "tomato", price: 0.0 },
+  { label: "LETTUCE", type: "lettuce", price: 0.0 },
+  { label: "CHEESE", type: "cheese", price: 0.5 },
+  { label: "MEAT", type: "meat", price: 1.5 }
 ];
 
 const BuildControls = props => {
@@ -24,6 +24,7 @@ const BuildControls = props => {
             key={ctrl.label}
             label={ctrl.label}
             disabled={props.disabled[ctrl.type]}
+            price={ctrl.price}
           />
         );
       })}
