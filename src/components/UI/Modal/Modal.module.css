@@ -1,7 +1,7 @@
 .Modal {
   position: fixed;
   z-index: 500;
-  background-color: white;
+  background-image: linear-gradient(to bottom right, #ee0000, #400000);
   width: 70%;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 1px black;
@@ -16,7 +16,14 @@
   .Modal {
     width: 500px;
     left: calc(50% - 250px);
-    background-color: white;
+    background-image: linear-gradient(to bottom right, #400000, #ee0000);
+    background-color: #400000;
     top: 30%;
+  }
+}
+
+@media (max-width: 599px) {
+  .Modal {
+    text-align: center;
   }
 }

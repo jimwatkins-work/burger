@@ -5,11 +5,11 @@
   overflow: scroll;
   text-align: center;
   font-weight: bold;
-  font-size: 1.2 rem;
+  font-size: 1.2 em;
 }
 
 .BurgerText {
-  font-size: 1.8em;
+  font-size: 0.95em;
 }
 
 @media (min-width: 1000px) and (min-height: 700px) {

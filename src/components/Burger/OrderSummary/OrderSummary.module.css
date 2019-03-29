@@ -3,20 +3,35 @@
 }
 
 .Total {
-  font-size: 28px;
-  text-shadow: 0.5px 0.5px red;
+  font-size: 20px;
+  text-shadow: 1px 1px black;
+  text-align: center;
+  margin: 5px;
+  color: white;
 }
 
 .Subtotal {
   font-size: 20px;
   color: red;
-  text-shadow: 0.5px 0.5px black;
+  text-shadow: 1px 1px black;
+  text-align: center;
+  margin: 2px;
 }
 
 .Checkout {
   text-align: center;
+  text-shadow: 0.2px 0.2px white;
 }
 
 .OrderConfirmation {
-  text-shadow: 1px 1px red;
+  text-shadow: 2px 2px black;
+  color: white;
+}
+
+.IngredientList {
+  margin-bottom: 20%;
+  list-style-type: none;
+  text-align: center;
+  padding-inline-start: 0px;
+  text-shadow: 0.3px 0.3px black;
 }
