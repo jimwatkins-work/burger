@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./Order.module.css";
+import { convertDate } from "../../shared/utility";
 
 const Order = props => {
   const ingredients = [];
@@ -23,7 +24,8 @@ const Order = props => {
             display: "inline-block",
             margin: "0 8px",
             border: "1px solid #ccc",
-            padding: "5px"
+            padding: "5px",
+            backgroundColor: "white"
           }}
         >
           {ing.name} ({ing.amount})
@@ -32,12 +34,18 @@ const Order = props => {
     }
   });
 
+  let date = convertDate(props.date);
+
   return (
     <div className={classes.Order}>
-      <p>DATE ORDERED: {props.date}</p>
-      <p>INGREDIENTS: {ingredientsOutput}</p>
       <p>
-        TOTAL PRICE: <strong>${props.totalPrice.toFixed(2)}</strong>
+        <strong>DATE ORDERED:</strong> {date}
+      </p>
+      <p>
+        <strong>INGREDIENTS:</strong> {ingredientsOutput}
+      </p>
+      <p>
+        <strong>TOTAL PRICE: ${props.totalPrice.toFixed(2)}</strong>
       </p>
     </div>
   );

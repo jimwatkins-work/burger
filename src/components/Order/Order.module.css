@@ -7,4 +7,6 @@
   box-sizing: border-box;
   font-size: 28px;
   text-shadow: 0.3px 0.3px red;
+  background-color: red;
+  opacity: 0.9;
 }

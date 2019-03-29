@@ -32,3 +32,12 @@ export const checkValidity = (value, rules) => {
 
   return isValid;
 };
+
+export const convertDate = props => {
+  let dateSplit = props.split(" ");
+  let dateArr = [];
+  for (var i = 1; i < 5; i++) {
+    dateArr.push(dateSplit[i]);
+  }
+  return dateArr.join(" ");
+};
