@@ -16,8 +16,7 @@ class ContactInfo extends Component {
         elementType: "input",
         elementConfig: {
           type: "text",
-          placeholder: "NAME",
-          display: "DELIVERY ADDRESS"
+          placeholder: "NAME"
         },
         value: "",
         validation: {
@@ -149,29 +148,11 @@ class ContactInfo extends Component {
         valid: false,
         touched: false
       },
-      deliveryMethod: {
-        elementType: "select",
-        elementConfig: {
-          options: [
-            { value: "fastest", displayValue: "FASTEST" },
-            { value: "economy", displayValue: "ECONOMY" },
-            { value: "standard", displayValue: "STANDARD" }
-          ],
-          display: "DELIVERY SPEED"
-        },
-        value: "economy",
-        validation: {
-          required: false
-        },
-        valid: false,
-        touched: false
-      },
       fullName: {
         elementType: "input",
         elementConfig: {
           type: "text",
-          placeholder: "NAME ON CARD",
-          display: "PAYMENT INFO"
+          placeholder: "NAME ON CARD"
         },
         value: "",
         validation: {
@@ -230,8 +211,7 @@ class ContactInfo extends Component {
         elementType: "input",
         elementConfig: {
           type: "text",
-          placeholder: "STREET",
-          display: "BILLING ADDRESS"
+          placeholder: "STREET"
         },
         value: "",
         validation: {
@@ -242,7 +222,7 @@ class ContactInfo extends Component {
         valid: false,
         touched: false
       },
-      billinCity: {
+      billingCity: {
         elementType: "input",
         elementConfig: {
           type: "text",
@@ -389,23 +369,22 @@ class ContactInfo extends Component {
         config: this.state.orderForm[key]
       });
     }
+
+    console.log(formElementsArray);
     let form = (
       <form onSubmit={this.orderHandler}>
         {formElementsArray.map(el => {
           return (
-            <>
-              <h4 key={Math.random()}>{el.config.elementConfig.display}</h4>
-              <Input
-                key={el.id}
-                elementType={el.config.elementType}
-                elementConfig={el.config.elementConfig}
-                value={el.config.value}
-                changed={event => this.inputChangedHandler(event, el.id)}
-                invalid={!el.config.valid}
-                shouldValidate={el.config.validation}
-                touched={el.config.touched}
-              />
-            </>
+            <Input
+              key={el.id}
+              elementType={el.config.elementType}
+              elementConfig={el.config.elementConfig}
+              value={el.config.value}
+              changed={event => this.inputChangedHandler(event, el.id)}
+              invalid={!el.config.valid}
+              shouldValidate={el.config.validation}
+              touched={el.config.touched}
+            />
           );
         })}
         <Button btnType="Success" disabled={!this.state.formIsValid}>
