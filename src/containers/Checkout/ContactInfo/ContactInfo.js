@@ -16,7 +16,8 @@ class ContactInfo extends Component {
         elementType: "input",
         elementConfig: {
           type: "text",
-          placeholder: "NAME"
+          placeholder: "NAME",
+          display: "DELIVERY ADDRESS"
         },
         value: "",
         validation: {
@@ -27,7 +28,7 @@ class ContactInfo extends Component {
         valid: false,
         touched: false
       },
-      street: {
+      deliveryStreet: {
         elementType: "input",
         elementConfig: {
           type: "text",
@@ -42,7 +43,7 @@ class ContactInfo extends Component {
         valid: false,
         touched: false
       },
-      city: {
+      deliveryCity: {
         elementType: "input",
         elementConfig: {
           type: "text",
@@ -57,7 +58,7 @@ class ContactInfo extends Component {
         valid: false,
         touched: false
       },
-      state: {
+      deliveryState: {
         elementType: "select",
         elementConfig: {
           options: [
@@ -119,7 +120,7 @@ class ContactInfo extends Component {
         valid: false,
         touched: false
       },
-      zip: {
+      deliveryZip: {
         elementType: "input",
         elementConfig: {
           type: "number",
@@ -155,11 +156,180 @@ class ContactInfo extends Component {
             { value: "fastest", displayValue: "FASTEST" },
             { value: "economy", displayValue: "ECONOMY" },
             { value: "standard", displayValue: "STANDARD" }
-          ]
+          ],
+          display: "DELIVERY SPEED"
         },
         value: "economy",
         validation: {
           required: false
+        },
+        valid: false,
+        touched: false
+      },
+      fullName: {
+        elementType: "input",
+        elementConfig: {
+          type: "text",
+          placeholder: "NAME ON CARD",
+          display: "PAYMENT INFO"
+        },
+        value: "",
+        validation: {
+          required: true,
+          maxLength: 25
+        },
+        valid: false,
+        touched: false
+      },
+      creditCardNum: {
+        elementType: "input",
+        elementConfig: {
+          type: "number",
+          placeholder: "CREDIT CARD NUMBER"
+        },
+        value: "",
+        validation: {
+          required: true,
+          minLength: 16,
+          maxLength: 16
+        },
+        valid: false,
+        touched: false
+      },
+      expDate: {
+        elementType: "input",
+        elementConfig: {
+          type: "text",
+          placeholder: "EXP. DATE (##/##)"
+        },
+        value: "",
+        validation: {
+          required: true,
+          minLength: 5,
+          maxLength: 5
+        },
+        valid: false,
+        touched: false
+      },
+      securityCode: {
+        elementType: "input",
+        elementConfig: {
+          type: "number",
+          placeholder: "SECURITY CODE"
+        },
+        value: "",
+        validation: {
+          required: true,
+          minLength: 3,
+          maxLength: 4
+        },
+        valid: false,
+        touched: false
+      },
+      billingStreet: {
+        elementType: "input",
+        elementConfig: {
+          type: "text",
+          placeholder: "STREET",
+          display: "BILLING ADDRESS"
+        },
+        value: "",
+        validation: {
+          required: true,
+          minLength: 5,
+          maxLength: 30
+        },
+        valid: false,
+        touched: false
+      },
+      billinCity: {
+        elementType: "input",
+        elementConfig: {
+          type: "text",
+          placeholder: "CITY"
+        },
+        value: "",
+        validation: {
+          required: true,
+          minLength: 2,
+          maxLength: 30
+        },
+        valid: false,
+        touched: false
+      },
+      billingState: {
+        elementType: "select",
+        elementConfig: {
+          options: [
+            { value: "Alabama", displayValue: "AL" },
+            { value: "Alaska", displayValue: "AK" },
+            { value: "Arizona", displayValue: "AZ" },
+            { value: "Arkansas", displayValue: "AR" },
+            { value: "California", displayValue: "CA" },
+            { value: "Colorado", displayValue: "CO" },
+            { value: "Connecticut", displayValue: "CT" },
+            { value: "Delaware", displayValue: "DE" },
+            { value: "Florida", displayValue: "FL" },
+            { value: "Georgia", displayValue: "GA" },
+            { value: "Hawaii", displayValue: "HI" },
+            { value: "Idaho", displayValue: "ID" },
+            { value: "Illinois", displayValue: "IL" },
+            { value: "Indiana", displayValue: "IN" },
+            { value: "Iowa", displayValue: "IA" },
+            { value: "Kansas", displayValue: "KS" },
+            { value: "Kentucky", displayValue: "KY" },
+            { value: "Louisiana", displayValue: "LA" },
+            { value: "Maine", displayValue: "ME" },
+            { value: "Maryland", displayValue: "MD" },
+            { value: "Massachusetts", displayValue: "MA" },
+            { value: "Michigan", displayValue: "MI" },
+            { value: "Minnesota", displayValue: "MN" },
+            { value: "Mississippi", displayValue: "MS" },
+            { value: "Missouri", displayValue: "MO" },
+            { value: "Montana", displayValue: "MT" },
+            { value: "Nebraska", displayValue: "NE" },
+            { value: "Nevada", displayValue: "NV" },
+            { value: "New Hampshire", displayValue: "NH" },
+            { value: "New Jersey", displayValue: "NJ" },
+            { value: "New Mexico", displayValue: "NM" },
+            { value: "North Carolona", displayValue: "NC" },
+            { value: "North Dakota", displayValue: "ND" },
+            { value: "Ohio", displayValue: "OH" },
+            { value: "Oklahoma", displayValue: "OK" },
+            { value: "Oregon", displayValue: "OR" },
+            { value: "Pennsylvania", displayValue: "PA" },
+            { value: "Rhode Island", displayValue: "RI" },
+            { value: "South Carolina", displayValue: "SC" },
+            { value: "South Dakota", displayValue: "SD" },
+            { value: "Tennessee", displayValue: "TN" },
+            { value: "Texas", displayValue: "TX" },
+            { value: "Utah", displayValue: "UT" },
+            { value: "Vermont", displayValue: "VT" },
+            { value: "Virginia", displayValue: "VA" },
+            { value: "Washington", displayValue: "WA" },
+            { value: "West Virginia", displayValue: "WV" },
+            { value: "Wisconsin", displayValue: "WI" },
+            { value: "Wyoming", displayValue: "WY" }
+          ]
+        },
+        value: "",
+        validation: {
+          required: true
+        },
+        valid: false,
+        touched: false
+      },
+      billingZip: {
+        elementType: "input",
+        elementConfig: {
+          type: "number",
+          placeholder: "ZIP CODE"
+        },
+        value: "",
+        validation: {
+          required: true,
+          minLength: 5,
+          maxLength: 5
         },
         valid: false,
         touched: false
@@ -212,43 +382,43 @@ class ContactInfo extends Component {
   };
 
   render() {
-    const formsElementsArray = [];
+    const formElementsArray = [];
     for (let key in this.state.orderForm) {
-      formsElementsArray.push({
+      formElementsArray.push({
         id: key,
         config: this.state.orderForm[key]
       });
     }
     let form = (
       <form onSubmit={this.orderHandler}>
-        {formsElementsArray.map(el => {
+        {formElementsArray.map(el => {
           return (
-            <Input
-              key={el.id}
-              elementType={el.config.elementType}
-              elementConfig={el.config.elementConfig}
-              value={el.config.value}
-              changed={event => this.inputChangedHandler(event, el.id)}
-              invalid={!el.config.valid}
-              shouldValidate={el.config.validation}
-              touched={el.config.touched}
-            />
+            <>
+              <h4 key={Math.random()}>{el.config.elementConfig.display}</h4>
+              <Input
+                key={el.id}
+                elementType={el.config.elementType}
+                elementConfig={el.config.elementConfig}
+                value={el.config.value}
+                changed={event => this.inputChangedHandler(event, el.id)}
+                invalid={!el.config.valid}
+                shouldValidate={el.config.validation}
+                touched={el.config.touched}
+              />
+            </>
           );
         })}
         <Button btnType="Success" disabled={!this.state.formIsValid}>
-          ORDER
+          SUBMIT ORDER
         </Button>
       </form>
     );
+
     if (this.props.loading) {
       form = <Spinner />;
     }
-    return (
-      <div className={classes.ContactInfo}>
-        <h4>ENTER YOUR DELIVERY INFO:</h4>
-        {form}
-      </div>
-    );
+
+    return <div className={classes.ContactInfo}>{form}</div>;
   }
 }
 
