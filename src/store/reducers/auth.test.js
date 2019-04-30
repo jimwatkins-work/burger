@@ -12,7 +12,30 @@ describe("auth reducer", () => {
     });
   });
 
-  it("should store the token and userId upon login", () => {
+  it("should change loading status to true when attempting login", () => {
+    expect(
+      reducer(
+        {
+          token: null,
+          userId: null,
+          error: null,
+          loading: false,
+          authRedirectPath: "/"
+        },
+        {
+          type: actionTypes.AUTH_START
+        }
+      )
+    ).toEqual({
+      token: null,
+      userId: null,
+      error: null,
+      loading: true,
+      authRedirectPath: "/"
+    });
+  });
+
+  it("should store the token and userId upon successful login", () => {
     expect(
       reducer(
         {
@@ -31,6 +54,77 @@ describe("auth reducer", () => {
     ).toEqual({
       token: "some-token",
       userId: "some-user-id",
+      error: null,
+      loading: false,
+      authRedirectPath: "/"
+    });
+  });
+
+  it("should set redirect path", () => {
+    expect(
+      reducer(
+        {
+          token: "some-token",
+          userId: "some-user-id",
+          error: null,
+          loading: false,
+          authRedirectPath: "/"
+        },
+        {
+          type: actionTypes.SET_AUTH_REDIRECT_PATH,
+          path: "/some-path"
+        }
+      )
+    ).toEqual({
+      token: "some-token",
+      userId: "some-user-id",
+      error: null,
+      loading: false,
+      authRedirectPath: "/some-path"
+    });
+  });
+
+  it("should return error upon failed login", () => {
+    expect(
+      reducer(
+        {
+          token: null,
+          userId: null,
+          error: null,
+          loading: false,
+          authRedirectPath: "/"
+        },
+        {
+          type: actionTypes.AUTH_FAILURE,
+          error: "some-error"
+        }
+      )
+    ).toEqual({
+      token: null,
+      userId: null,
+      error: "some-error",
+      loading: false,
+      authRedirectPath: "/"
+    });
+  });
+
+  it("should remove token and user id upon logout", () => {
+    expect(
+      reducer(
+        {
+          token: "some-token",
+          userId: "some-user-id",
+          error: null,
+          loading: false,
+          authRedirectPath: "/"
+        },
+        {
+          type: actionTypes.LOGOUT
+        }
+      )
+    ).toEqual({
+      token: null,
+      userId: null,
       error: null,
       loading: false,
       authRedirectPath: "/"

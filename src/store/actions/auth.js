@@ -3,7 +3,8 @@ import axios from "axios";
 
 export const authStart = () => {
   return {
-    type: actionTypes.AUTH_START
+    type: actionTypes.AUTH_START,
+    loading: true
   };
 };
 
