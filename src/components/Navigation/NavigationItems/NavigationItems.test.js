@@ -36,4 +36,11 @@ describe("<NavigationItems />", () => {
       wrapper.contains(<NavigationItem link="/logout">SIGN OUT</NavigationItem>)
     ).toEqual(true);
   });
+
+  it("should contain a Orders button if authenticated", () => {
+    wrapper.setProps({ isAuthenticated: true });
+    expect(
+      wrapper.contains(<NavigationItem link="/orders">ORDERS</NavigationItem>)
+    ).toEqual(true);
+  });
 });
