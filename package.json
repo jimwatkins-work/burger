@@ -44,5 +44,14 @@
   "bugs": {
     "url": "https://github.com/jimwatkins-work/burger/issues"
   },
-  "homepage": "https://github.com/jimwatkins-work/burger#readme"
+  "homepage": "https://github.com/jimwatkins-work/burger#readme",
+  "devDependencies": {
+    "@wdio/cli": "^5.8.3",
+    "@wdio/dot-reporter": "^5.7.8",
+    "@wdio/local-runner": "^5.8.3",
+    "@wdio/mocha-framework": "^5.8.1",
+    "@wdio/selenium-standalone-service": "^5.8.0",
+    "@wdio/sync": "^5.8.1",
+    "selenium-standalone": "^6.16.0"
+  }
 }
