@@ -1,0 +1,8 @@
+{
+  "script": "return (function react$$(selector, props, state) {\n  let elements = window.resq.resq$$(selector);\n\n  if (Object.keys(props).length) {\n    elements = elements.byProps(props);\n  }\n\n  if (Object.keys(state).length) {\n    elements = elements.byState(state);\n  }\n\n  if (!elements.length) {\n    return [];\n  } // resq returns an array of HTMLElements if the React component is a fragment\n  // this avoids having nested arrays of nodes which the driver does not understand\n  // [[div, div], [div, div]] => [div, div, div, div]\n\n\n  let nodes = [];\n  elements.forEach(element => {\n    const {\n      node,\n      isFragment\n    } = element;\n\n    if (isFragment) {\n      nodes = nodes.concat(node);\n    } else {\n      nodes.push(node);\n    }\n  });\n  return [...nodes];\n}).apply(null, arguments)",
+  "args": [
+    ".Input_InputElement__1C86R",
+    {},
+    {}
+  ]
+}

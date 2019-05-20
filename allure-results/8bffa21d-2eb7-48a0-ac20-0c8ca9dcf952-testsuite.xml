@@ -1,0 +1,99 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1558043047279' stop='1558043048391'>
+    <name>webdriver.io page</name>
+    <title>webdriver.io page</title>
+    <test-cases>
+        <test-case start='1558043047280' status='pending' stop='1558043047280'>
+            <name>should have nav item BURGER BUILDER</name>
+            <title>should have nav item BURGER BUILDER</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Test ignored</message>
+                <stack-trace>undefined</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1558043047280' status='pending' stop='1558043047280'>
+            <name>while not authenticated, should have nav item SIGN IN</name>
+            <title>while not authenticated, should have nav item SIGN IN</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Test ignored</message>
+                <stack-trace>undefined</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1558043047280' status='broken' stop='1558043048390'>
+            <name>while authenticated, should have nav item SIGN OUT</name>
+            <title>while authenticated, should have nav item SIGN OUT</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps>
+                <step start='1558043047284' status='passed' stop='1558043048241'>
+                    <name>POST /session/:sessionId/url</name>
+                    <title>POST /session/:sessionId/url</title>
+                    <attachments>
+                        <attachment title='Request' source='defc4549-86c0-4fdd-98cd-094fb524ea77-attachment.json' type='application/json' size='52'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1558043048242' status='passed' stop='1558043048260'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='4056a965-6b3d-437b-8843-78072d4055bc-attachment.json' type='application/json' size='74'/>
+                        <attachment title='Response' source='f23df31f-cbe9-465b-bd9b-983fb799f9fb-attachment.json' type='application/json' size='39'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1558043048289' status='passed' stop='1558043048340'>
+                    <name>POST /session/:sessionId/element/0.7529424871860857-1/click</name>
+                    <title>POST /session/:sessionId/element/0.7529424871860857-1/click</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1558043048340' status='passed' stop='1558043048362'>
+                    <name>POST /session/:sessionId/execute</name>
+                    <title>POST /session/:sessionId/execute</title>
+                    <attachments>
+                        <attachment title='Request' source='d25e0a84-e5c1-460f-964f-878904046bb4-attachment.json' type='application/json' size='5637'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1558043048362' status='passed' stop='1558043048371'>
+                    <name>POST /session/:sessionId/execute</name>
+                    <title>POST /session/:sessionId/execute</title>
+                    <attachments>
+                        <attachment title='Request' source='2fcd8666-0f1e-4e45-9e61-cac995cb0772-attachment.json' type='application/json' size='129'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1558043048372' status='passed' stop='1558043048382'>
+                    <name>POST /session/:sessionId/execute</name>
+                    <title>POST /session/:sessionId/execute</title>
+                    <attachments>
+                        <attachment title='Request' source='91afb481-a8c4-439a-b7c0-9ed239e0cf3d-attachment.json' type='application/json' size='898'/>
+                        <attachment title='Response' source='c667211e-78dc-4c94-9b6b-36c3586ca183-attachment.json' type='application/json' size='2'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Cannot read property 'click' of undefined</message>
+                <stack-trace>TypeError: Cannot read property 'click' of undefined
+                    at Context.it (/Users/jimwatkins/Udemy/React-Router-Redux-Etc/burger/test/specs/nav.spec.js:30:20)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

@@ -1,0 +1,74 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1558043288711' stop='1558043299588'>
+    <name>webdriver.io page</name>
+    <title>webdriver.io page</title>
+    <test-cases>
+        <test-case start='1558043288711' status='pending' stop='1558043288711'>
+            <name>should have nav item BURGER BUILDER</name>
+            <title>should have nav item BURGER BUILDER</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Test ignored</message>
+                <stack-trace>undefined</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1558043288712' status='pending' stop='1558043288712'>
+            <name>while not authenticated, should have nav item SIGN IN</name>
+            <title>while not authenticated, should have nav item SIGN IN</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Test ignored</message>
+                <stack-trace>undefined</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1558043288712' status='broken' stop='1558043299587'>
+            <name>while authenticated, should have nav item SIGN OUT</name>
+            <title>while authenticated, should have nav item SIGN OUT</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps>
+                <step start='1558043288715' status='passed' stop='1558043289448'>
+                    <name>POST /session/:sessionId/url</name>
+                    <title>POST /session/:sessionId/url</title>
+                    <attachments>
+                        <attachment title='Request' source='135103f1-b729-4397-869f-0b9bdaf4eff5-attachment.json' type='application/json' size='52'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1558043289450' status='passed' stop='1558043289467'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='a8b81385-f664-4cb4-af02-201469c01591-attachment.json' type='application/json' size='74'/>
+                        <attachment title='Response' source='1ec0e836-7485-4d76-b11c-e101b95f8f63-attachment.json' type='application/json' size='39'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1558043289496' status='passed' stop='1558043289582'>
+                    <name>POST /session/:sessionId/element/0.8926972124242656-1/click</name>
+                    <title>POST /session/:sessionId/element/0.8926972124242656-1/click</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>document is not defined</message>
+                <stack-trace>ReferenceError: document is not defined
+                    at Context.it (/Users/jimwatkins/Udemy/React-Router-Redux-Etc/burger/test/specs/nav.spec.js:30:25)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

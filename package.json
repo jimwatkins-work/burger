@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "allure": "0.0.0",
     "axios": "^0.18.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
@@ -52,6 +53,7 @@
     "@wdio/mocha-framework": "^5.8.1",
     "@wdio/selenium-standalone-service": "^5.8.0",
     "@wdio/sync": "^5.8.1",
-    "selenium-standalone": "^6.16.0"
+    "selenium-standalone": "^6.16.0",
+    "@wdio/allure-reporter": "^5.7.11"
   }
 }

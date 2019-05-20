@@ -1,0 +1,68 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1558373230030' stop='1558373230669'>
+    <name>webdriver.io page</name>
+    <title>webdriver.io page</title>
+    <test-cases>
+        <test-case start='1558373230031' status='passed' stop='1558373230533'>
+            <name>"before all" hook</name>
+            <title>"before all" hook</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps>
+                <step start='1558373230035' status='passed' stop='1558373230532'>
+                    <name>POST /session/:sessionId/url</name>
+                    <title>POST /session/:sessionId/url</title>
+                    <attachments>
+                        <attachment title='Request' source='35e49644-8ec1-4a3c-9349-b8fde63fe019-attachment.json' type='application/json' size='52'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1558373230533' status='passed' stop='1558373230668'>
+            <name>while BURGER BUILDER link is the active link the backround color is rgba(238, 0, 0, 1)</name>
+            <title>while BURGER BUILDER link is the active link the backround color is rgba(238, 0, 0, 1)</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps>
+                <step start='1558373230535' status='passed' stop='1558373230554'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='03d59c33-b083-49ad-9773-ed22590b9874-attachment.json' type='application/json' size='81'/>
+                        <attachment title='Response' source='1caf928e-d734-4e48-9332-5324532a5235-attachment.json' type='application/json' size='40'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1558373230571' status='passed' stop='1558373230582'>
+                    <name>GET /session/:sessionId/element/0.20525378929563054-1/css/background-color</name>
+                    <title>GET /session/:sessionId/element/0.20525378929563054-1/css/background-color</title>
+                    <attachments>
+                        <attachment title='Response' source='96d46edd-45b1-4d81-bdfa-fad17d7fc0ef-attachment.json' type='application/json' size='20'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1558373230584' status='passed' stop='1558373230668'>
+                    <name>POST /session/:sessionId/element/0.20525378929563054-1/click</name>
+                    <title>POST /session/:sessionId/element/0.20525378929563054-1/click</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

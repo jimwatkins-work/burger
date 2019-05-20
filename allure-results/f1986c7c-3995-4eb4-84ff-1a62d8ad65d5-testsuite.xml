@@ -1,0 +1,50 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1558040245970' stop='1558040247126'>
+    <name>webdriver.io page</name>
+    <title>webdriver.io page</title>
+    <test-cases>
+        <test-case start='1558040245971' status='failed' stop='1558040247125'>
+            <name>should have the right title</name>
+            <title>should have the right title</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-1'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps>
+                <step start='1558040245974' status='passed' stop='1558040247060'>
+                    <name>POST /session/:sessionId/url</name>
+                    <title>POST /session/:sessionId/url</title>
+                    <attachments>
+                        <attachment title='Request' source='fc4399b6-b99f-4edd-98e3-7999e79c899c-attachment.json' type='application/json' size='52'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1558040247062' status='passed' stop='1558040247083'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='91ba04cd-3b29-4167-8482-9d275304b4b1-attachment.json' type='application/json' size='81'/>
+                        <attachment title='Response' source='71f3e8ba-595f-4dc8-8441-0ea747cc82d8-attachment.json' type='application/json' size='39'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>Element {
+                  sessionId: '98d0ab1539da6379b9a183d209cb5bcc',
+                  elementId: '0.4000760310354263-1',
+                  ELEMENT: '0.400076031035426... == 'BURGER BUILDER'</message>
+                <stack-trace>AssertionError [ERR_ASSERTION]: Element {
+                  sessionId: '98d0ab1539da6379b9a183d209cb5bcc',
+                  elementId: '0.4000760310354263-1',
+                  ELEMENT: '0.400076031035426... == 'BURGER BUILDER'
+                    at Context.it (/Users/jimwatkins/Udemy/React-Router-Redux-Etc/burger/test/specs/nav.spec.js:7:12)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
