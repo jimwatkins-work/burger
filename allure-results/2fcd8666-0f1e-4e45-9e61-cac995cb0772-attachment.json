@@ -1,4 +1,0 @@
-{
-  "script": "return (function waitToLoadReact() {\n  window.resq.waitToLoadReact();\n}).apply(null, arguments)",
-  "args": []
-}

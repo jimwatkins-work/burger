@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": ".//class[normalize-space() = \"Input_InputElement__1C86R\"]"
-}
