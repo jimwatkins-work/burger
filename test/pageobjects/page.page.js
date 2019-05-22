@@ -3,6 +3,10 @@ export default class Page {
     this.title = "My Page";
   }
 
+  getUrl = () => {
+    browser.getUrl();
+  };
+
   logIn = () => {
     const signIn = $("a=SIGN IN");
     const emailField = $("[placeholder=EMAIL]");
@@ -17,9 +21,5 @@ export default class Page {
   logOut = () => {
     const signOut = $("a=SIGN OUT");
     signOut.click();
-  };
-
-  getUrl = () => {
-    browser.getUrl();
   };
 }
