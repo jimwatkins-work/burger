@@ -2,7 +2,7 @@ import NavPage from "../pageobjects/nav.page";
 const assert = require("assert");
 
 describe("navigation bar", () => {
-  before(() => {
+  beforeEach(() => {
     browser.url("https://burger-96b0e.firebaseapp.com");
   });
 

@@ -23,6 +23,12 @@ exports.config = {
   exclude: [
     // 'path/to/excluded/files'
   ],
+  suites: {
+    smoke: ["./test/specs/nav.spec.js", "./test/specs/burgerBuilder.spec.js"],
+    otherFeature: [
+      // ...
+    ]
+  },
   //
   // ============
   // Capabilities
