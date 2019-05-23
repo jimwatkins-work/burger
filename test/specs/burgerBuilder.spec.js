@@ -100,6 +100,7 @@ describe("burger builder", () => {
     BurgerBuilderPage.logIn();
     assert.equal(BurgerBuilderPage.orderButton().getText(), "ORDER NOW");
     assert.equal(BurgerBuilderPage.orderButton().isEnabled(), false);
+    BurgerBuilderPage.logOut();
   });
 
   it("when I create a burger with 1 meat, 1 cheese, 1 bacon, 1 lettuce, and 1 tomato it is displayed", () => {

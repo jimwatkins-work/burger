@@ -1,18 +1,61 @@
-import BurgerBuilderPage from "../pageobjects/auth.page";
+import AuthPage from "../pageobjects/auth.page";
 const assert = require("assert");
 
-describe("navigation bar", () => {
+describe("auth page", () => {
   beforeEach(() => {
     browser.url("https://burger-96b0e.firebaseapp.com");
     browser.pause(100);
   });
 
-  it("with no ingredients added burger representation should be of a top/bottom bun with 'ADD SOME INGREDIENTS TO YOUR BURGER!'", () => {
-    assert.equal(BurgerBuilderPage.topBunImage().isDisplayed(), true);
-    assert.equal(
-      BurgerBuilderPage.burgerText().getText(),
-      "ADD SOME INGREDIENTS TO YOUR BURGER!"
-    );
-    assert.equal(BurgerBuilderPage.bottomBunImage().isDisplayed(), true);
+  it("should set a userId, token, and tokenExpiration in local storage upon authorization", () => {
+    AuthPage.logIn();
+    const userId = browser.executeAsync(function(done) {
+      setTimeout(() => {
+        done(window.localStorage.getItem("userId"));
+      }, 500);
+    });
+    const token = browser.executeAsync(function(done) {
+      setTimeout(() => {
+        done(window.localStorage.getItem("token"));
+      }, 500);
+    });
+    const tokenExpiration = browser.executeAsync(function(done) {
+      setTimeout(() => {
+        done(window.localStorage.getItem("tokenExpiration"));
+      }, 500);
+    });
+    assert(userId != null);
+    assert(token != null);
+    assert(tokenExpiration != null);
+    AuthPage.logOut();
+  });
+
+  it("should remove the userId, token, and tokenExpiration in local storage upon log out", () => {
+    AuthPage.logIn();
+    const userId = browser.executeAsync(function(done) {
+      setTimeout(() => {
+        done(window.localStorage.getItem("userId"));
+      }, 500);
+    });
+    const token = browser.executeAsync(function(done) {
+      setTimeout(() => {
+        done(window.localStorage.getItem("token"));
+      }, 500);
+    });
+    const tokenExpiration = browser.executeAsync(function(done) {
+      setTimeout(() => {
+        done(window.localStorage.getItem("tokenExpiration"));
+      }, 500);
+    });
+    assert(userId != null);
+    assert(token != null);
+    assert(tokenExpiration != null);
+    AuthPage.logOut();
+    const localStorage = browser.executeAsync(function(done) {
+      setTimeout(() => {
+        done(window.localStorage);
+      }, 500);
+    });
+    assert.equal(localStorage.length, 0);
   });
 });
