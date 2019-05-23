@@ -7,14 +7,14 @@ export default class Page {
     browser.getUrl();
   };
 
-  logIn = () => {
+  logIn = (email, password) => {
     const signIn = $("a=SIGN IN");
     const emailField = $("[placeholder=EMAIL]");
     const passwordField = $("[placeholder=PASSWORD]");
     const signInButton = $("button=SIGN IN");
     signIn.click();
-    emailField.setValue("test@test.com");
-    passwordField.setValue("password");
+    emailField.setValue(email);
+    passwordField.setValue(password);
     signInButton.click();
   };
 

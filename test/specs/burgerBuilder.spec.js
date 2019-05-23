@@ -97,7 +97,7 @@ describe("burger builder", () => {
   });
 
   it("when authenticated, 'ORDER NOW' CTA should be present and disabled", () => {
-    BurgerBuilderPage.logIn();
+    BurgerBuilderPage.logIn("test@test.com", "password");
     assert.equal(BurgerBuilderPage.orderButton().getText(), "ORDER NOW");
     assert.equal(BurgerBuilderPage.orderButton().isEnabled(), false);
     BurgerBuilderPage.logOut();

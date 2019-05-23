@@ -15,19 +15,19 @@ describe("navigation bar", () => {
   });
 
   it("while authenticated should have a nav item ORDERS", () => {
-    NavPage.logIn();
+    NavPage.logIn("test@test.com", "password");
     assert.equal(NavPage.navItemOrders().getText(), "ORDERS");
     NavPage.logOut();
   });
 
   it("while authenticated should have a nav item SIGN OUT", () => {
-    NavPage.logIn();
+    NavPage.logIn("test@test.com", "password");
     assert.equal(NavPage.navItemSignOut().getText(), "SIGN OUT");
     NavPage.logOut();
   });
 
   it("while authenticated should still have a nav item BURGER BUILDER", () => {
-    NavPage.logIn();
+    NavPage.logIn("test@test.com", "password");
     assert.equal(NavPage.navItemBurgerBuilder().getText(), "BURGER BUILDER");
     NavPage.logOut();
   });
