@@ -4,8 +4,8 @@ class NavPage extends Page {
   brownColor = "rgba(170,104,23,1)";
   redColor = "rgba(238,0,0,1)";
 
-  login() {
-    super.login();
+  logIn() {
+    super.logIn();
   }
 
   logout() {

@@ -21,8 +21,8 @@ class AuthPage extends Page {
     return $(".Input_ValidationError__2SPi_");
   }
 
-  login() {
-    super.login();
+  logIn() {
+    super.logIn();
   }
 
   logout() {
