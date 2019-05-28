@@ -5,6 +5,10 @@ class AuthPage extends Page {
     return $("p*=AUTH");
   }
 
+  getAuthCTAs() {
+    return $$(".Button_Button__1UPhn ");
+  }
+
   getEmailField() {
     return $("[placeholder=EMAIL]");
   }
@@ -28,6 +32,18 @@ class AuthPage extends Page {
   signIn() {
     return $("a=SIGN IN");
   }
+
+  signUp = (email, password) => {
+    if (email === "test@test.com") {
+      email = email;
+    } else {
+      email = email + "@" + Math.ceil(Math.random() * 10000) + ".com";
+    }
+    this.getAuthCTAs()[1].click();
+    this.getEmailField().setValue(email);
+    this.getPasswordField().setValue(password);
+    this.getAuthCTAs()[0].click();
+  };
 }
 
 export default new AuthPage();
