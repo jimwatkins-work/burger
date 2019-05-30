@@ -19,6 +19,7 @@ class NavPage extends Page {
   navItemOrders() {
     return $("a=ORDERS");
   }
+
   navItemSignIn() {
     return $("a=SIGN IN");
   }

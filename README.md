@@ -8,17 +8,17 @@
 
 ### `stack`
 
- - React.js
- - Redux
- - Firebase
- - Enzyme 
- - Jest
- - Webdriver.io
- - Allure
+- React.js
+- Redux.js
+- Firebase
+- Enzyme
+- Jest
+- Webdriver.io
+- Allure
 
 ### Prerequisites
 
-- Node.js - v8.x.x or v9.x.x
+- Node.js - v9.x.x
 
 ### `npm start`
 
@@ -57,7 +57,6 @@ npm install
 
 - [WebdriverIO](https://webdriver.io/) v.5
 
-
 ### Directory structure
 
 - [wdio.conf](./wdio.conf.js) keeps the configuration needed for WebdriverIO to run tests base on environment.
@@ -67,6 +66,7 @@ npm install
 - [test/pageobjects](./test/pageobjects) makes automation tests more readable and maintainable since it abstracts any actions on the page away from the actual tests. When you need to change, add or remove method navigate to the page you need.
 
 ### Execute the tests
+
 Run units tests:
 
 ```shell
@@ -84,4 +84,3 @@ Run single spec:
 ```shell
 ./node_modules/.bin/wdio wdio.conf.js --spec ${spec name}
 ```
-
