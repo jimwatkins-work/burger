@@ -1,44 +1,85 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# My Burger
 
-## Available Scripts
+- [Getting Started](#start)
+- [Execute the tests](#execute)
 
-In the project directory, you can run:
+## Getting Started <a name='start'></a>
+
+### `stack`
+
+ - React.js
+ - Redux
+ - Firebase
+ - Enzyme 
+ - Jest
+ - Webdriver.io
+ - Allure
+
+### Prerequisites
+
+- Node.js - v8.x.x or v9.x.x
 
 ### `npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Environment Setup
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Node.js
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+If Node.js is not available on your system use [https://nodejs.org/en/download/](https://nodejs.org/en/download/) to download the installer
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+After running the installer, check whether it was properly installed or not using the following command line:
 
-### `npm run eject`
+```shell
+node -v
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+If the version of the current Node.js you just installed is printed out, the installation was successful.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Clone the `burger` repository.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```shell
+git git@github.com:jimwatkins-work/burger.git
+```
 
-## Learn More
+To install dependencies, run:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```shell
+npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Tools
+
+- [WebdriverIO](https://webdriver.io/) v.5
+
+
+#### Directory structure
+
+- [wdio.conf](./wdio.conf.js) keeps the configuration needed for WebdriverIO to run tests base on environment.
+
+- [test/specs](.test/specs) directory contains suites for Smoke, Regression tests and E2E tests.
+
+- [test/pageobjects](./test/pageobjects) makes automation tests more readable and maintainable since it abstracts any actions on the page away from the actual tests. When you need to change, add or remove method navigate to the page you need.
+
+#### Execute the tests<a name='execute'></a>
+
+Run all tests:
+
+```shell
+./node_modules/.bin/wdio wdio.conf.js
+```
+
+Run one spec:
+
+```shell
+./node_modules/.bin/wdio wdio.conf.js --spec ${spec name}
+```
+
