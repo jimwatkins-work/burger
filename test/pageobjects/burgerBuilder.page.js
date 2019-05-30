@@ -50,8 +50,8 @@ class burgerBuilderPage extends Page {
     super.logIn();
   }
 
-  logout() {
-    super.logout();
+  logOut() {
+    super.logOut();
   }
 
   meatImage() {

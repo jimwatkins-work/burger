@@ -4,7 +4,7 @@ const assert = require("assert");
 describe("auth page", () => {
   beforeEach(() => {
     browser.url("https://burger-96b0e.firebaseapp.com/signin");
-    browser.pause(200);
+    browser.pause(500);
   });
 
   it("should set a userId, token, and tokenExpiration in local storage upon successful authorization", () => {
@@ -117,7 +117,7 @@ describe("auth page", () => {
 
   it("should log user in by setting a userId, token, and tokenExpiration in local storage, upon successful sign up", () => {
     AuthPage.signUp("newUser", "password");
-    browser.pause(300);
+    browser.pause(500);
     const userId = browser.executeAsync(function(done) {
       setTimeout(() => {
         done(window.localStorage.getItem("userId"));
@@ -136,5 +136,6 @@ describe("auth page", () => {
     assert(userId != null);
     assert(token != null);
     assert(tokenExpiration != null);
+    AuthPage.logOut();
   });
 });

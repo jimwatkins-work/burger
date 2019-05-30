@@ -4,6 +4,7 @@ const assert = require("assert");
 describe("navigation bar", () => {
   beforeEach(() => {
     browser.url("https://burger-96b0e.firebaseapp.com");
+    browser.pause(500);
   });
 
   it("should have a nav item BURGER BUILDER", () => {

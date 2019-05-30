@@ -8,8 +8,8 @@ class NavPage extends Page {
     super.logIn();
   }
 
-  logout() {
-    super.logout();
+  logOut() {
+    super.logOut();
   }
 
   navItemBurgerBuilder() {

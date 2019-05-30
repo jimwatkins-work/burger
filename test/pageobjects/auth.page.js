@@ -25,8 +25,8 @@ class AuthPage extends Page {
     super.logIn();
   }
 
-  logout() {
-    super.logout();
+  logOut() {
+    super.logOut();
   }
 
   signIn() {

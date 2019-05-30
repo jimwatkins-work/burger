@@ -5,6 +5,7 @@ const assert = require("assert");
 describe("auth page", () => {
   beforeEach(() => {
     browser.url("https://burger-96b0e.firebaseapp.com/");
+    browser.pause(500);
   });
 
   it("should display when 'Order Now' CTA is clicked", () => {
@@ -18,5 +19,7 @@ describe("auth page", () => {
     BurgerBuilderPage.orderButton().click();
     browser.pause(500);
     assert.equal(OrderSummaryPage.getOrderSummary().isDisplayed(), true);
+    OrderSummaryPage.cancelOrderSummary().click();
+    OrderSummaryPage.logOut();
   });
 });

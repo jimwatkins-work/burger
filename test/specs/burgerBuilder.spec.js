@@ -4,7 +4,7 @@ const assert = require("assert");
 describe("burger builder", () => {
   beforeEach(() => {
     browser.url("https://burger-96b0e.firebaseapp.com");
-    browser.pause(100);
+    browser.pause(500);
   });
 
   it("with no ingredients added, burger representation should be of a top/bottom bun with 'ADD SOME INGREDIENTS TO YOUR BURGER!'", () => {

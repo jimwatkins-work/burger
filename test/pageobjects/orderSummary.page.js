@@ -5,8 +5,12 @@ class orderSummaryPage extends Page {
     super.logIn();
   }
 
-  logout() {
-    super.logout();
+  logOut() {
+    super.logOut();
+  }
+
+  cancelOrderSummary() {
+    return $("button=CANCEL");
   }
 
   getOrderSummary() {
