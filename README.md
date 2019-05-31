@@ -82,5 +82,5 @@ Run integration tests:
 Run single spec:
 
 ```shell
-./node_modules/.bin/wdio wdio.conf.js --spec ${spec name}
+./node_modules/.bin/wdio wdio.conf.js --spec ${spec path}
 ```
