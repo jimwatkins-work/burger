@@ -4,6 +4,9 @@ const assert = require("assert");
 
 describe("order summary modal", () => {
   beforeEach(() => {
+    if (browser.config.capabilities.browserName === "safari") {
+      browser.maximizeWindow();
+    }
     browser.url("https://burger-96b0e.firebaseapp.com/");
     browser.pause(500);
     OrderSummaryPage.logIn("test@test.com", "password");

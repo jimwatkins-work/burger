@@ -4,6 +4,9 @@ const assert = require("assert");
 describe("burger builder", () => {
   beforeEach(() => {
     browser.url("https://burger-96b0e.firebaseapp.com");
+    if (browser.config.capabilities.browserName === "safari") {
+      browser.maximizeWindow();
+    }
     browser.pause(500);
   });
 

@@ -4,6 +4,9 @@ const assert = require("assert");
 describe("navigation bar", () => {
   beforeEach(() => {
     browser.url("https://burger-96b0e.firebaseapp.com");
+    if (browser.config.capabilities.browserName === "safari") {
+      browser.maximizeWindow();
+    }
     browser.pause(500);
   });
 
@@ -38,7 +41,11 @@ describe("navigation bar", () => {
     const burgerBuilderNavItemBackground = NavPage.navItemBurgerBuilder().getCSSProperty(
       "background-color"
     ).value;
-    assert.equal(burgerBuilderNavItemBackground, NavPage.redColor);
+    if (browser.config.capabilities.browserName === "firefox" || "safari") {
+      assert.equal(burgerBuilderNavItemBackground, NavPage.firefoxRedColor);
+    } else {
+      assert.equal(burgerBuilderNavItemBackground, NavPage.chromeRedColor);
+    }
   });
 
   it("should update background color to rgba(238,0,0,1) when new link has been selected", () => {
@@ -47,7 +54,11 @@ describe("navigation bar", () => {
     const signInNavItemBackground = NavPage.navItemSignIn().getCSSProperty(
       "background-color"
     ).value;
-    assert.equal(signInNavItemBackground, NavPage.redColor);
+    if (browser.config.capabilities.browserName === "firefox" || "safari") {
+      assert.equal(signInNavItemBackground, NavPage.firefoxRedColor);
+    } else {
+      assert.equal(signInNavItemBackground, NavPage.chromeRedColor);
+    }
   });
 
   it("should update background color to rgba(143,92,44) when link is hovered over", () => {
@@ -56,7 +67,11 @@ describe("navigation bar", () => {
     const signInNavItemBackground = NavPage.navItemSignIn().getCSSProperty(
       "background-color"
     ).value;
-    assert.equal(signInNavItemBackground, NavPage.brownColor);
+    if (browser.config.capabilities.browserName === "firefox" || "safari") {
+      assert.equal(signInNavItemBackground, NavPage.firefoxBrownColor);
+    } else {
+      assert.equal(signInNavItemBackground, NavPage.chromeBrownColor);
+    }
   });
 
   it("should change the url when a link has been selected", () => {

@@ -4,6 +4,9 @@ const assert = require("assert");
 describe("auth page", () => {
   beforeEach(() => {
     browser.url("https://burger-96b0e.firebaseapp.com/signin");
+    if (browser.config.capabilities.browserName === "safari") {
+      browser.maximizeWindow();
+    }
     browser.pause(500);
   });
 

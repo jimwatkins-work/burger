@@ -6,6 +6,9 @@ const assert = require("assert");
 describe("orders page", () => {
   beforeEach(() => {
     browser.url("https://burger-96b0e.firebaseapp.com/");
+    if (browser.config.capabilities.browserName === "safari") {
+      browser.maximizeWindow();
+    }
     browser.pause(500);
     OrdersPage.logIn("test@test.com", "password");
     NavPage.navItemOrders().click();

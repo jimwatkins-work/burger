@@ -1,8 +1,10 @@
 import Page from "./page.page";
 
 class NavPage extends Page {
-  brownColor = "rgba(170,104,23,1)";
-  redColor = "rgba(238,0,0,1)";
+  chromeBrownColor = "rgba(170,104,23,1)";
+  chromeRedColor = "rgba(238,0,0,1)";
+  firefoxBrownColor = "rgb(170,104,23)";
+  firefoxRedColor = "rgb(238,0,0)";
 
   logIn() {
     super.logIn();
