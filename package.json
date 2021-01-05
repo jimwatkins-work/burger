@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "allure": "0.0.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
     "prop-types": "^15.6.2",
